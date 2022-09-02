@@ -3,6 +3,7 @@
   --dark-blue: #051d3b;
   --white: #fafafa;
   --font-family:'Montserrat', sans-serif;
+  --padding-x: 100px
 }
 *{
   margin: 0;
@@ -65,6 +66,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,4 +99,225 @@
 .hero__section-text h1 span{
   display: block;
   font-weight: 700;
+}
+.hero__section-more{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.hero__section-more p{
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  color: var(--white);
+}
+
+/**********ABOUT***********/
+.about__section{
+  background-color: var(--white);
+  padding: 100px;
+}
+.container{
+  max-width: 1200px;
+}
+.section__title{
+  font-family: var(--font-family) ;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.white-title{
+  color: var(--white);
+}
+.section__title span{
+  font-weight: 700;
+}
+.about__section p{
+  font-size: 20px;
+  font-family: var(--font-family);
+  color: var(--dark-blue);
+  line-height: 1.5;
+  text-align: center;
+}
+/**********beneficios***********/
+.beneficios__section{
+  padding: 100px var(--padding-x);
+  background-image: url("img/3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+  position: relative;
+}
+.beneficios__section *{
+  position: relative;
+  z-index: 1;
+}
+.beneficios__section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+  opacity: .9;
+}
+.beneficios__cardContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 275px));
+  gap: 10%;
+  justify-content: center;
+  margin: 80px 0;
+}
+.beneficios__card-grid{
+  background-color: #fff;
+  width: 100%;
+  border-radius: 30px;
+  display: grid;
+  grid-template-rows: 200px auto;
+  padding: 35px;
+  gap: 15px;
+  box-shadow: 7px 5px 5px #7b7b7b2e;
+
+}
+.beneficios__card-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.beneficios__card-img img{
+  width: 100%;
+  height: 100%;
+  max-width: 175px;
+  max-height: 170px;
+}
+.beneficios__car-text h3{
+  font-size: 30px;
+  font-family: var(--font-family);
+  text-align: center;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+/**********************/
+/****CONTACT SECTION***/
+.contact__section{
+  background-color: var(--dark-blue);
+  padding: 100px var(--padding-x);
+}
+.contact__formContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 50px;
+}
+.contact__formContainer-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__formContainer-img img{
+  width: 100%;
+  object-fit: contain;
+  max-width: 470px;
+}
+.contact__formContainer-form .form__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+.contact__formContainer-form .form__item label{
+  font-size: 20px;
+  font-family: var(--font-family);
+  color: var(--white);
+  font-weight: 200;
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+.contact__formContainer-form .form__item input{
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  width: 100%;
+  
+}
+.contact__formContainer-form form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.contact__formContainer-form form button{
+  width: 40%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: skyblue;
+  cursor: pointer;
+  font-family: var(--font-family);
+  margin-top: 50px;
+  transition: background-color .3s;
+}
+.contact__formContainer-form form button:hover{
+  background-color: tomato;
+  color: var(--white);
+  font-weight: 600;
+}
+.menu__mobile{
+  display: none;
+}
+/*********MEDIA**********/
+@media screen and (max-width: 1235px) {
+  :root{
+    --padding-x: 50px;
+  }
+  .beneficios__cardContainer{
+    gap: 3%;
+  }
+  
+}
+@media screen and (max-width: 992px) {
+  
+  }
+  
+@media screen and (max-width: 768px) {
+  .menu{
+    display: none;
+  }
+  .menu__mobile{
+    display: block;
+  }
+  .hero__section-text h1{
+    font-size: 4em;
+  }
+  .contact__formContainer{
+    grid-template-columns: 1fr;
+  }
+  
+}
+@media screen and (max-width: 576px) {
+  
+}
+@media screen and (max-width: 411px) {
+  
+}
+@media screen and (max-width: 375px) {
+  
+}
+@media screen and (max-width: 360px) {
+  
 }
